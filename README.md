@@ -1,70 +1,129 @@
-# Getting Started with Create React App
+# E-Commerce Chatbot Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
+This project is an e-commerce chatbot application built with a **React** frontend and a **Flask** backend. It allows users to interact with the system for product searches, recommendations, and chat-based assistance, providing a seamless shopping experience.
 
-## Available Scripts
+## Objectives
+The main objective of this project is to enhance user engagement through a chatbot interface, providing product information, recommendations, and helping users search for products. The chatbot aims to simplify product exploration while offering a smooth and intuitive user experience.
 
-In the project directory, you can run:
+## Technologies Used
+### Frontend
+- **React**: A JavaScript library for building user interfaces, used to create the chatbot and user interface components.
+- **CSS**:  Used for styling and enhancing UI/UX.
 
-### `npm start`
+### Backend
+- **Python (Flask)**: A lightweight WSGI web application framework used to create the backend APIs for user authentication, product retrieval, and chat history management.
+- **SQLite**: A lightweight database used to store user data, products, and chat history.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Other Tools
+- **SQLAlchemy**: An ORM used to manage database interactions in Python.
+- **JavaScript (Fetch API)**: Used for making API requests from the React frontend to the Flask backend.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation and Setup
+### Prerequisites
+Before you begin, ensure you have the following installed:
+- Node.js (for the frontend)
+- Python 3.8+ (for the backend)
+- SQLite (for database)
 
-### `npm test`
+### Backend Setup (Flask)
+1. Clone the repository and navigate to the backend directory:
+   ```bash
+   git clone <repository-url>
+   cd backend
+2.  Create a virtual environment and activate it and install required packages:
+    
+   ``` bash  
+    python3 -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate` `
+	'pip install -r requirements.txt'	
+```
+4.  Run the Flask application:
+    
+    ``` bash
+     'flask run' 
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend Setup (React)
 
-### `npm run build`
+1.  Navigate to the frontend directory:
+    
+    ``` bash    
+        `cd src` 
+    ```
+    
+2.  Install dependencies:
+    
+    ``` bash 
+        `npm install` 
+    ```
+    
+3.  Start the React development server:
+    
+    ``` bash
+	    `npm start` 
+``` bash
+The application will be available at `http://localhost:3000` for the frontend and `http://localhost:5000` for the backend.
+```
+## API Documentation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### User Authentication
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-   **POST** `/auth/register`: Registers a new user.
+-   **POST** `/auth/login`: Authenticates a user and returns a session.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Product Endpoints
 
-### `npm run eject`
+-   **GET** `/products?search=<query>&category=<category>`: Search for products by query and category.
+-   **GET** `/products/category/<category>`: Get products by category.
+-   **GET** `/products/price-range?min_price=<min>&max_price=<max>`: Filter products by price range.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Chat Endpoints
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-   **POST** `/chat/message`: Stores a user’s chat message.
+-   **GET** `/chat/history?user_id=<userId>`: Retrieves chat history for a user.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Methodology and Approach
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-   **Modular Architecture**: The frontend and backend are decoupled, allowing for easier maintainability and scalability. Each component in React is self-contained, handling specific tasks like user input and chatbot responses.
+-   **API-driven Development**: All interactions between the frontend and backend happen via APIs, making the system extensible for future features.
+-   **Error Handling**: Error handling mechanisms are in place to ensure the application fails gracefully in case of issues with API calls or database queries.
 
-## Learn More
+## Challenges Faced and Solutions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1.  **Managing Authentication**: One of the key challenges was managing user sessions across the chatbot interface. This was handled by building custom login functionality with session handling in Flask.
+    
+2.  **Efficient Product Search**: To ensure a fast and efficient search experience, we implemented search filters for product categories and price ranges, optimizing API queries.
+    
+3.  **State Management in React**: Handling the chatbot’s conversation flow required careful state management, ensuring that both the user input and the bot’s responses were in sync.
+    
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Learnings
 
-### Code Splitting
+-   Leveraging **React** for building complex user interfaces allowed for a clean separation of concerns between components.
+-   Using **Flask** for the backend API made it simple to create RESTful endpoints and integrate with a database.
+-   Implementing user authentication and session management in **Flask** provided a deeper understanding of web security principles.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Results and Screenshots
 
-### Analyzing the Bundle Size
+-   **Product Search Interface**: Users can search for products by name or filter by category and price range.
+-   **Chatbot Interaction**: Users can interact with the chatbot for personalized product recommendations.
+-   **Registration**: User can create an account.
+-   **Login**: User can log in to their account.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+_Include screenshots here_
+#### Chatbot Interface
+![Chatbot Screenshot](ecommerce-chatbot\assets\1.png)
 
-### Making a Progressive Web App
+#### Product Search Results
+![Product Search Results](ecommerce-chatbot\assets\2.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### Registration
+![Registration](ecommerce-chatbot\assets\3.png)
 
-### Advanced Configuration
+#### Login
+![Login](ecommerce-chatbot\assets\4.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Conclusion
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project demonstrates the integration of a chatbot within an e-commerce platform, enhancing the shopping experience with an interactive and intelligent interface. The use of modern frameworks like **React** and **Flask** ensures a maintainable, scalable, and modular codebase. Future enhancements could include adding recommendation systems using machine learning algorithms and expanding the chatbot’s functionality to handle complex user queries.
