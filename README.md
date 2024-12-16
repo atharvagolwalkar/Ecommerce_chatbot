@@ -113,16 +113,15 @@ The application will be available at `http://localhost:3000` for the frontend an
 
 _Include screenshots here_
 #### Chatbot Interface
-![Chatbot Screenshot](ecommerce-chatbot\assets\1.png)
+![Chatbot Screenshot](https://github.com/atharvagolwalkar/Ecommerce_chatbot/blob/main/assets/1.png?raw=true)
 
 #### Product Search Results
-![Product Search Results](ecommerce-chatbot\assets\2.png)
-
+![Product Search Results](https://github.com/atharvagolwalkar/Ecommerce_chatbot/blob/main/assets/2.png?raw=true)
 #### Registration
-![Registration](ecommerce-chatbot\assets\3.png)
+![Registration](https://github.com/atharvagolwalkar/Ecommerce_chatbot/blob/main/assets/3.png?raw=true)
 
 #### Login
-![Login](ecommerce-chatbot\assets\4.png)
+![Login](https://github.com/atharvagolwalkar/Ecommerce_chatbot/blob/main/assets/4.png?raw=true)
 
 ## Conclusion
 
